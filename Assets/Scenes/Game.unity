@@ -366,7 +366,6 @@ GameObject:
   - component: {fileID: 37952802}
   - component: {fileID: 37952804}
   - component: {fileID: 37952801}
-  - component: {fileID: 37952803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -438,7 +437,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 1
+  m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -454,7 +453,7 @@ Transform:
   m_GameObject: {fileID: 37952797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.22, y: -2.87, z: 0}
-  m_LocalScale: {x: 0.64, y: 0.64, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1562523316}
   m_Father: {fileID: 0}
@@ -476,8 +475,7 @@ MonoBehaviour:
   jumpPower: 8
   dashSpeed: 18
   startDashTime: 0.1
-  dashCooldown: 0
-  animator: {fileID: 37952803}
+  dashCooldown: 2
 --- !u!61 &37952802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -491,38 +489,19 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21086234}
+  m_Offset: {x: 0, y: 0.13877863}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
-    drawMode: 1
+    drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58754575, y: 0.5782753}
+  m_Size: {x: 0.3091997, y: 0.4341079}
   m_EdgeRadius: 0
---- !u!95 &37952803
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37952797}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fdde1dcc2fe476447b11d7c1461a61cb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &37952804
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -536,9 +515,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.20031938}
+  m_Offset: {x: 0, y: -0.12275559}
   serializedVersion: 2
-  m_Radius: 0.2996807
+  m_Radius: 0.22211689
 --- !u!1 &135249352
 GameObject:
   m_ObjectHideFlags: 0

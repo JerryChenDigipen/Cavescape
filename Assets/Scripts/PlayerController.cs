@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,14 +14,14 @@ public class PlayerController : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int direction; 
-    public float dashCooldown;
-    private float dashCount;
-    public Animator animator;
+    public int dashCooldown;
+    private long lastDashTime;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         dashTime = startDashTime;
+        lastDashTime = DateTime.Now.Ticks;
     }
 
     // Update is called once per frame
@@ -43,8 +44,11 @@ public class PlayerController : MonoBehaviour
         jumpCounter = 2;
     }
     void Dash(){
-        float moveInput = Input.GetAxis("Horizontal");
-        if (dashCount >= dashCooldown){
+        long currentTick = DateTime.Now.Ticks;
+        TimeSpan elapsedSpan = new TimeSpan(currentTick - lastDashTime);
+        if (true){
+            lastDashTime = currentTick;
+            float moveInput = Input.GetAxis("Horizontal");
             if (direction == 0){
                 if (Input.GetKeyDown(KeyCode.LeftShift)){
                     if (moveInput < 0){
