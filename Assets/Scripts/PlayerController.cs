@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private int direction; 
     public int dashCooldown;
     private int dashCount;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump(){
         if (Input.GetButtonDown("Jump") && jumpCounter > 0) {
+            rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
             jumpCounter--;
         }
