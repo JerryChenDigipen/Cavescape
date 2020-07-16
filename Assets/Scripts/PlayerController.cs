@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     private float dashTime;
     public float startDashTime;
     private int direction; 
-    public int dashCooldown;
-    private int dashCount;
+    public float dashCooldown;
+    private float dashCount;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -44,10 +44,7 @@ public class PlayerController : MonoBehaviour
     }
     void Dash(){
         float moveInput = Input.GetAxis("Horizontal");
-        while (dashCount < dashCooldown){
-            dashCount++;
-        }
-        if (dashCount == dashCooldown){
+        if (dashCount >= dashCooldown){
             if (direction == 0){
                 if (Input.GetKeyDown(KeyCode.LeftShift)){
                     if (moveInput < 0){
