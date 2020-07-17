@@ -448,9 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb26304f29878d48b5d7d597a485f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 5
   jumpPower: 8
-  dashSpeed: 10
+  dashSpeed: 12
   startDashTime: 0.25
 --- !u!61 &37952802
 BoxCollider2D:
@@ -5149,6 +5149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceff6cc19f82c5e4687607e9168ceadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yReset: 0
 --- !u!1 &673713605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7807,7 +7808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060179772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.14, y: -0.57, z: 0}
+  m_LocalPosition: {x: 11.93, y: -0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1314173494}
@@ -17192,7 +17193,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 500
   m_Sprite: {fileID: 21300000, guid: 72c84b665cc2da74f8976d1261b70884, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
