@@ -8,6 +8,7 @@ public class StalagmiteFall : MonoBehaviour
     Vector2 startPos;
     GameObject Player;
     public int yReset;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class StalagmiteFall : MonoBehaviour
     {
         if (rb.bodyType == RigidbodyType2D.Static){
             if (Mathf.Abs(Player.transform.position.x - startPos.x) < 5){
+                audioSource.Play();
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
@@ -29,7 +31,7 @@ public class StalagmiteFall : MonoBehaviour
                 if (this.transform.position.y < yReset){
                     Invoke("resetPosition", 1);
                 }
-            }    
+            }
     }
     void resetPosition()
     {
