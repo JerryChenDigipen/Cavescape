@@ -7,6 +7,7 @@ public class StalagmiteFall : MonoBehaviour
     private Rigidbody2D rb;
     Vector2 startPos;
     GameObject Player;
+    public int yReset;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +26,14 @@ public class StalagmiteFall : MonoBehaviour
         }
         else
             if (rb.bodyType == RigidbodyType2D.Dynamic){
-                if (this.transform.position.y < -10){
-                    this.transform.position = startPos;
-                    rb.bodyType = RigidbodyType2D.Static;
+                if (this.transform.position.y < yReset){
+                    Invoke("resetPosition", 1);
                 }
-            }
-        
+            }    
+    }
+    void resetPosition()
+    {
+        this.transform.position = startPos;
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }

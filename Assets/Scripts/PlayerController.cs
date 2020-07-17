@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public AudioSource audioBoi;
+    public AudioClip jumpAudio;
+    public AudioClip dashAudio;
+    public AudioClip deathAudio;
+    public AudioClip steppAudio;
     public float moveSpeed;
     public float jumpPower;
     private float moveInput;
@@ -74,7 +79,7 @@ public class PlayerController : MonoBehaviour
                     {
                         canDash = true;
                     }
-                    else 
+                    else
                     {
                         canDash = false;
                     }
