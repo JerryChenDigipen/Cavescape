@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RespawnPlayer : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class RespawnPlayer : MonoBehaviour
           audioSource.clip = deathAudio;
           audioSource.Play();
           player.transform.position = respawnPoint.transform.position;
+        }
+        if (coll.CompareTag("FinalTransition")){
+          player.transform.position = respawnPoint.transform.position;
+          SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
