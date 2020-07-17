@@ -23,5 +23,13 @@ public class StalagmiteFall : MonoBehaviour
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
+        else
+            if (rb.bodyType == RigidbodyType2D.Dynamic){
+                if (this.transform.position.y < -10){
+                    this.transform.position = startPos;
+                    rb.bodyType = RigidbodyType2D.Static;
+                }
+            }
+        
     }
 }
