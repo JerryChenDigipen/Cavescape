@@ -23,4 +23,5 @@ public class JumpCounter : MonoBehaviour
             Player.GetComponent<PlayerController>().resetJump();
         }
     }
+
 }
