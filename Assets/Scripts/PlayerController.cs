@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float startDashTime;
     private int direction;
     private bool canDash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.AddForce(new Vector2(0f, jumpPower), ForceMode2D.Impulse);
             jumpCounter--;
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.clip = jumpAudio;
+            audio.Play();
         }
     }
     public void resetJump()
@@ -58,6 +63,10 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
+                    AudioSource audio = GetComponent<AudioSource>();
+                    audio.clip = dashAudio;
+                    audio.Play();
+
                     if (moveInput < 0)
                     {
                         direction = 1;
