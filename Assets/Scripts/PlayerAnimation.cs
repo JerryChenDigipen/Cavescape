@@ -7,10 +7,12 @@ public class PlayerAnimation : MonoBehaviour
     public Animator animator;
     public bool faceRight;
     private float moveInput;
+    Rigidbody2D PlayerRB;
     // Start is called before the first frame update
     void Start()
     {
         faceRight = true;
+        PlayerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -24,5 +26,7 @@ public class PlayerAnimation : MonoBehaviour
             animator.SetBool("FaceRight", false);
         }
         animator.SetFloat("Speed", Mathf.Abs(moveInput));
+        animator.SetFloat("Velocity", PlayerRB.velocity.x);
+        
     }
 }
